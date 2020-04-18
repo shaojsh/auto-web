@@ -26,7 +26,7 @@ from django.contrib import admin
 urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
-    # url(r'^index$', index),
+    # url(r'^index$', index),pyrt
     # 配置多级路由
     url(r'^', include('user.urls'))
 ]

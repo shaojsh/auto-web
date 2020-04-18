@@ -44,24 +44,52 @@
 <div class="main-wrapper">
     <div class="main">
         </br>
-        <h2>平安健康医疗科技有限公司</h2>
-        <img alt="image" class="img-fluid" src="../static/images/HOME.PNG"></a>
-        <br/>
-        <br/>
-        <div class="aricle"></div>
-        <p>
-            平安健康医疗科技有限公司（股票简称：「平安好医生」；股份代码：01833.HK）是全球领先的医疗健康生态平台，致力于通过「移动医疗+AI」，为每个家庭提供一位家庭医生，为每个人提供一份电子健康档案，为每个人提供一个健康管理计划。目前，平安健康医疗科技有限公司已经形成在线医疗、消费型医疗、健康商城、健康管理及互动等重点业务板块。
+        <h2>APPIUM AUTO TEST</h2>
+        </br>
+        <form id='blogPostForm' enctype="multipart/form-data" action="/uploadFiles" method="post">
+            {% csrf_token %}
             <br>
-            <br>截至2019年6月末，平安健康医疗科技有限公司的注册用户数达2.89亿，期末月活跃用户数达6270万，是国内覆盖率第一的移动医疗应用。公司通过自主研发的AI辅助诊疗系统协助平安好医生的自有医疗团队，为用户提供涵盖7*24小时全天候在线咨询、转诊、挂号、在线购药及1小时送药等一站式医疗服务，并以自有医疗团队为核心提供多元化的一站式会员服务类产品。
-            <br>
-            <br>2015年4月，「平安好医生APP」正式上线。 2017年12月，平安健康医疗科技有限公司获得孙正义旗下软银愿景基金Pre-IPO
-            4亿美元投资；2018年5月4日，公司在港交所挂牌上市，股票代码1833.HK，被称为全球医疗科技第一股。
-        </p>
-
+            <div>
+                <h5>数据文件上传</h5>
+                </br>
+                <hr/>
+                <input type="file" name="myfile" id="fileUpload"/>
+                <input type="submit" value="upload" name="upload" onclick="return emptyFun()"/>
+                <hr/>
+                </br>
+                </br>
+                </br>
+                <h5>自动化脚本执行</h5>
+                </br>
+                <hr/>
+                <select id="mobileType">
+                    <option>-请选择机型文件（.txt）-</option>
+                    <option>1111111</option>
+                    <option>2222222</option>
+                </select>
+                <select id="dataType">
+                    <option>-请选择数据驱动(.xls/xlsx)-</option>
+                    <option>333333</option>
+                    <option>444444</option>
+                </select>
+                <select id="javaType">
+                    <option>-请选择自动化脚本（.java）-</option>
+                    <option>555555</option>
+                    <option>666666</option>
+                </select>
+                <hr/>
+                <input type="submit" value="RunCase" name="RunCase"/>
+            </div>
+            </br>
+            </br>
+            <div align="right">
+                <input type="button" value="CLEAR" id="clear" onclick="clearVal();"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </form>
     </div>
-    <footer class="footer text-center py-2 theme-bg-dark">
-    <small class="copyright">Copyright &copy; 2019.Company PA-DOC All rights reserved.</a></small>
-    </footer>
+    <!--    <footer class="footer text-center py-2 theme-bg-dark">-->
+    <!--        <small class="copyright">Copyright &copy; 2019.Company PA-DOC All rights reserved.</a></small>-->
+    <!--    </footer>-->
 </div>
 
 <!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->
@@ -92,7 +120,38 @@
 
 <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
 <script src="../static/js/demo/style-switcher.js"></script>
+<script>
+		function emptyFun(){
+		var fileUpload = document.getElementById('fileUpload').value;
+		if (!fileUpload){
+			alert('请上传文件');
+			return false;
+		} else {
+			var r=confirm("确认要上传吗");
+			if (r==true){
+  			    return true;
+  			}else{
+  			    return false;
+  			}
+		}
+	}
 
+    function clearVal() {
+    var el = document.getElementById('fileUpload');
+    var e2 = document.getElementById('mobileType');
+    var e3 = document.getElementById('dataType');
+    var e4 = document.getElementById('javaType');
+    if (el || e2 || e3 || e4) {
+        el.value = '';
+        e2.value = '-请选择机型文件（.txt）-';
+        e3.value = '-请选择数据驱动(.xls/xlsx)-';
+        e4.value = '-请选择自动化脚本（.java）-';
+    }
+    }
+
+
+
+</script>
 
 </body>
 </html>
