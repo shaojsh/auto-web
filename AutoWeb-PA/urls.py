@@ -28,5 +28,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^index$', index),
     # 配置多级路由
-    url(r'^user/', include('user.urls'))
+    url(r'^', include('user.urls'))
 ]

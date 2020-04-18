@@ -1,9 +1,9 @@
-from django.conf.urls import url
+from django.conf.urls import url,include
 
-from .views import reg, index
+from .views import index
 
 urlpatterns = [
     # 配置多级路由
-    url(r'^reg$', reg),
     url(r'^index$', index),
+    url(r'^$', index),
 ]
