@@ -62,23 +62,30 @@
                 <h5>自动化脚本执行</h5>
                 </br>
                 <hr/>
+                <font color="red">*</font>
                 <select id="mobileType">
                     <option>-请选择机型文件（.txt）-</option>
-                    <option>1111111</option>
-                    <option>2222222</option>
+                    {% for i in L_PhoneType %}
+                    <option>{{ i }}</option>
+                    {% endfor %}
                 </select>
+                &nbsp;&nbsp;&nbsp;
                 <select id="dataType">
                     <option>-请选择数据驱动(.xls/xlsx)-</option>
-                    <option>333333</option>
-                    <option>444444</option>
+                    {% for i in L_ExcelType %}
+                    <option>{{ i }}</option>
+                    {% endfor %}
                 </select>
+                &nbsp;&nbsp;&nbsp;
                 <select id="javaType">
                     <option>-请选择自动化脚本（.java）-</option>
-                    <option>555555</option>
-                    <option>666666</option>
+                    {% for i in L_JavaType %}
+                    <option>{{ i }}</option>
+                    {% endfor %}
                 </select>
+                &nbsp;&nbsp;&nbsp;<font color="red">*</font>
                 <hr/>
-                <input type="submit" value="RunCase" name="RunCase"/>
+                <input type="submit" value="RunCase" name="RunCase" onclick="return RunCaseBtn()"/>
             </div>
             </br>
             </br>
@@ -149,7 +156,14 @@
     }
     }
 
-
+    function RunCaseBtn() {
+    var el = document.getElementById('mobileType');
+    var e2 = document.getElementById('dataType');
+    if (el || e2 ) {
+         alert('请选择机型和对应的脚本');
+         return false;
+    }
+    }
 
 </script>
 
