@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'AutoWeb-PA.urls'
+ROOT_URLCONF = 'AutoWeb.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'AutoWeb-PA.wsgi.application'
+WSGI_APPLICATION = 'AutoWeb.wsgi.application'
 
 
 # Database

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>平安好医生自动化测试平台</title>
-
+    <title>自动化测试平台</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,24 +15,41 @@
 
     <!-- Theme CSS -->
     <link href="../static/css/theme-1.css" id="theme-style" rel="stylesheet">
+    <style>
+        #sub_menu3{display:block;}
+        #sub_menu2{display:block;}
+        #sub_menu1{display:block;}
+    </style>
 
 </head>
 
 <body>
 
 <header class="header text-center">
-    <h1 class="blog-name pt-lg-4 mb-0">平安好医生 AUTO</h1>
+    <h1 class="blog-name pt-lg-4 mb-0"></h1>
     <ul class="navbar-nav flex-column text-left">
         </br>
         </br>
         <li class="nav-item">
-            <a class="nav-link" href="appiumAutoTest.html"><i class="fas fa-bookmark fa-fw mr-2"></i>APPIUM AUTO</a>
+            <a class="nav-link" onclick="f('sub_menu1')"><i class="fas fa-bookmark fa-fw mr-2"></i>移动端自动化</a>
+            <div id = "sub_menu1">
+            <div>&nbsp&nbsp&nbsp&nbsp&nbsp<a class="child1"  style="color:LightSteelBlue;font-weight:bold;font-size:14px;" font href="index">●Web端任务</a></div>
+            <div>&nbsp&nbsp&nbsp&nbsp&nbsp<a class="child1"  style="color:LightSteelBlue;font-weight:bold;font-size:14px;" href="index">●Web端任务列表</a></div>
+            </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index"><i class="fas fa-bookmark fa-fw mr-2"></i>TODO...</a>
+            <a class="nav-link" onclick="f('sub_menu2')" ><i class="fas fa-bookmark fa-fw mr-2"></i>Web端自动化</a>
+            <div id = "sub_menu2">
+            <div>&nbsp&nbsp&nbsp&nbsp&nbsp<a class="child2"  style="color:LightSteelBlue;font-weight:bold;font-size:14px;" font href="index">●Web端任务</a></div>
+            <div>&nbsp&nbsp&nbsp&nbsp&nbsp<a class="child2"  style="color:LightSteelBlue;font-weight:bold;font-size:14px;" href="index">●Web端任务列表</a></div>
+            </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index"><i class="fas fa-bookmark fa-fw mr-2"></i>TODO...</a>
+            <a class="nav-link" onclick="f('sub_menu3')"><i class="fas fa-bookmark fa-fw mr-2"></i>接口自动化</a>
+            <div id = "sub_menu3">
+            <div>&nbsp&nbsp&nbsp&nbsp&nbsp<a class="child3"  style="color:LightSteelBlue;font-weight:bold;font-size:14px;" font href="index">●接口任务</a></div>
+            <div>&nbsp&nbsp&nbsp&nbsp&nbsp<a class="child3"  style="color:LightSteelBlue;font-weight:bold;font-size:14px;" href="index">●接口任务列表</a></div>
+            </div>
         </li>
     </ul>
     </div>
@@ -92,7 +108,12 @@
 
 <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
 <script src="../static/js/demo/style-switcher.js"></script>
-
+<script type="text/javascript">
+	function f(str){
+    var sub_menu = document.getElementById(str);
+    sub_menu.style.display = (sub_menu.style.display == 'block')?'none':'block';
+}
+</script>
 
 </body>
 </html>
