@@ -2,7 +2,7 @@
 #  1. pip install django==1.11
 #  2.django-admin startproject blog .(.是当前目录的意思创建在django-blog)
 #  3.settings.py中DATABASES注释配置自己的数据库 ： https://docs.djangoproject.com/en/1.11/ref/settings/#databases 【需要先装数据库驱动 mysql5.5或更高】
-#  4.生成自己的APP ：python manage.py startapp user
+#  4.生成自己的APP ：python manage.py startapp userpython
 #  5.将应用 user 添加在 setting里面
 #  6.(sqlite3)https://www.cnblogs.com/xl2432/p/10494971.html: 1.python manage.py makemigrations  2.python manage.py migrate
 (# 数据库要生成DB 只需要在modle中添加对应表和字段，然后迁移就可以，非常方便)
@@ -13,3 +13,8 @@
 注意
 # 使用模版时注意模版语法（管道语法：将传过来的值进行过滤显示：大写，取模.....等 ：|） 缺点：模版技术会让前后端分离不彻底（一般不建议使用）
 # 路由配置可以都配置在URL里面，但是，为了看起来方便，也可以配置多级路由，让url.py看起来没那么臃肿:user中建立url
+
+DB 从sqllite 改成 mysql的方法
+1.pip install pymysql
+2.setting 文件设置并且创立相应数据库
+3.db数据迁移(数据重新迁移的方法：先删除DB中相关的表，在去除migrations中的py文件，然后重新迁移)

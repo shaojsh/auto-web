@@ -47,7 +47,7 @@
         <li class="nav-item">
             <a class="nav-link" onclick="f('sub_menu3')"><i class="fas fa-bookmark fa-fw mr-2"></i>接口自动化</a>
             <div id = "sub_menu3">
-            <div>&nbsp&nbsp&nbsp&nbsp&nbsp<a class="child3"  style="color:LightSteelBlue;font-weight:bold;font-size:14px;" font href="ApiTaskCreate">●接口任务</a></div>
+            <div>&nbsp&nbsp&nbsp&nbsp&nbsp<a class="child3"  style="color:LightSteelBlue;font-weight:bold;font-size:14px;" href="ApiTaskCreate">●接口任务</a></div>
             <div>&nbsp&nbsp&nbsp&nbsp&nbsp<a class="child3"  style="color:LightSteelBlue;font-weight:bold;font-size:14px;" href="index">●接口任务列表</a></div>
             </div>
         </li>
@@ -60,21 +60,45 @@
 <div class="main-wrapper">
     <div class="main">
         </br>
-        <h2>平安健康医疗科技有限公司</h2>
-        <img alt="image" class="img-fluid" src="../static/images/HOME.PNG"></a>
+        <h3 font >API 任务 </h3>
+        </br>
+        <form id = 'ApiDataCreate' enctype="multipart/form-data" action="/ApiTaskDataCreate" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input style="text-align:center;vertical-align:middle; width:20% " id="project" name="project" class="form-control mr-md-1 semail" placeholder="所属项目">
+        </div>
+        <select style="text-align:center;vertical-align:middle; width:20%;padding:5px;text-align-last:center" id = "evn" name = "evn" class="form-control mr-md-1 semail">
+          <option style="" value="" disabled selected hidden>测试环境选择</option>
+          <option style="text-align:center" value ="test">test</option>
+          <option style="text-align:center" value ="dev">dev</option>
+          <option style="text-align:center" value="sit">sit</option>
+          <option style="text-align:center" value="uat">uat</option>
+        </select>
+        </br>
+        <input style="text-align:center;vertical-align:middle; width:30% " id="taskName" name="taskName" class="form-control mr-md-1 semail" placeholder="用例名称">
+        </br>
+        <textarea style="text-align:center;vertical-align:middle; width:50% " id="taskDes" name="taskDes" class="form-control mr-md-1 semail" placeholder="用例描述"></textarea>
+        </br>
+        <input style="text-align:center;vertical-align:middle; width:50% " id="ApiPath" name="ApiPath" class="form-control mr-md-1 semail" placeholder="接口路径">
+        </br>
+        <div id = "projectApiReqWay" class="form-group">请求方式:&nbsp
+            <label><input name="requireWay" type="radio" value="Get"/>Get&nbsp</label>
+            <label><input name="requireWay" type="radio" value="Post"/>Post&nbsp</label>
+            <label><input name="requireWay" type="radio" value="Put"/>Put&nbsp</label>
+            <label><input name="requireWay" type="radio" value="Head"/>Head&nbsp</label>
+            <label><input name="requireWay" type="radio" value="Delete"/>Delete&nbsp</label>
+            <label><input name="requireWay" type="radio" value="Trace"/>Trace&nbsp</label>
+        </div>
+        参数上传：&nbsp&nbsp<input type="file" name="myfile" id = "fileUpload"/>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" value="API用例创建"/>
+
+    </form>
         <br/>
         <br/>
-        <div class="aricle"></div>
-        <p>
-            平安健康医疗科技有限公司（股票简称：「平安好医生」；股份代码：01833.HK）是全球领先的医疗健康生态平台，致力于通过「移动医疗+AI」，为每个家庭提供一位家庭医生，为每个人提供一份电子健康档案，为每个人提供一个健康管理计划。目前，平安健康医疗科技有限公司已经形成在线医疗、消费型医疗、健康商城、健康管理及互动等重点业务板块。
-            <br>
-            <br>截至2019年6月末，平安健康医疗科技有限公司的注册用户数达2.89亿，期末月活跃用户数达6270万，是国内覆盖率第一的移动医疗应用。公司通过自主研发的AI辅助诊疗系统协助平安好医生的自有医疗团队，为用户提供涵盖7*24小时全天候在线咨询、转诊、挂号、在线购药及1小时送药等一站式医疗服务，并以自有医疗团队为核心提供多元化的一站式会员服务类产品。
-            <br>
-            <br>2015年4月，「平安好医生APP」正式上线。 2017年12月，平安健康医疗科技有限公司获得孙正义旗下软银愿景基金Pre-IPO
-            4亿美元投资；2018年5月4日，公司在港交所挂牌上市，股票代码1833.HK，被称为全球医疗科技第一股。
-        </p>
+
 
     </div>
+
     <footer class="footer text-center py-2 theme-bg-dark">
     <small class="copyright">Copyright &copy; 2020 SJS All rights reserved.</a></small>
     </footer>

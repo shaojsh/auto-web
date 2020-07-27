@@ -2,11 +2,23 @@ import os
 
 from django.http import JsonResponse, HttpRequest, HttpResponse
 from django.shortcuts import render
-
-
 # index画面跳转
+from user import API
+
+
 def index(request: HttpRequest):
     return render(request, 'index.html')
+
+
+# 自动化(API)任务创建画面跳转
+def ApiTaskCreate(request: HttpRequest):
+    return render(request, 'ApiTaskCreate.html')
+
+
+# 自动化(API)任务创建
+def ApiTaskDataCreate(request: HttpRequest):
+    data = API.InsertApiTaskData(request)
+    return render(request, "ApiTasks.html", {"data": data})
 
 
 # appiumAutoTest画面跳转
@@ -34,9 +46,7 @@ def appiumAutoTest(request: HttpRequest):
         for file in files:
             if os.path.splitext(file)[1] == '.java':
                 L_JavaType.append(file)
-    # L.insert(0, L_PhoneType)
-    # L.insert(1, L_ExcelType)
-    # L.insert(2, L_JavaType)
+
     return render(request, "appiumAutoTest.html",
                   {"L_PhoneType": L_PhoneType, "L_ExcelType": L_ExcelType, "L_JavaType": L_JavaType})
 
